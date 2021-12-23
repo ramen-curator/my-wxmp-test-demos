@@ -1,1 +1,21 @@
-<view>Hello World!</view>
+<view class="container">
+    <view class="header" ></view>
+    <scroll-view
+        scroll-y
+        refresher-enabled="{{enabled}}"
+        refresher-triggered="{{triggered}}"
+        bindrefresherrefresh="onRefresherRefresh"
+        >
+        <view class="main">
+            <view class="ad">Ad.</view>
+            <view wx:for="{{dataList}}" 
+                wx:for-index="i" 
+                wx:for-item="v"
+                >
+                <view class="card" key="{{i}}">
+                    Card {{v}}
+                </view>
+            </view>    
+        </view>
+    </scroll-view>
+</view>
