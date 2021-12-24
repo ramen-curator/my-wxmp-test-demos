@@ -15,6 +15,7 @@ Page({
     isFirstRender: true,
     triggered: true,
     isTop:true,//因为一开始进来就是在top，所以需要设为true
+    isPulling: false,
   },
   onLoad() {
     fakeAPI().then((res) =>
@@ -41,4 +42,14 @@ Page({
       });
     });
   },
+  onRefresherPulling(){
+    if(!this.data.isPulling){
+      this.setData({isPulling:true})
+    }
+  },
+  onRefresherRestore(){
+    if(this.data.isPulling){
+      this.setData({isPulling:false})
+    }
+  }
 });

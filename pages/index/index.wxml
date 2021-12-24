@@ -1,10 +1,13 @@
-<view class="container">
+<view class="container {{isPulling?'blockScroll':''}}">
     <view class="header" ></view>
     <scroll-view
         scroll-y
         refresher-enabled="{{enabled}}"
         refresher-triggered="{{triggered}}"
         bindrefresherrefresh="onRefresherRefresh"
+        bindrefresherpulling="onRefresherPulling"
+        bindrefresherrestore="onRefresherRestore"
+        bindrefresherabort="onRefresherRestore"
         >
         <view class="main">
             <view class="ad">Ad.</view>

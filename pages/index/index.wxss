@@ -1,5 +1,9 @@
 .container {
 }
+.container.blockScroll{
+  height: 100vh;
+  overflow: hidden;
+}
 
 .header {
   background-color: pink;
