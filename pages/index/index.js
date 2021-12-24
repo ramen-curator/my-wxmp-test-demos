@@ -25,6 +25,7 @@ Page({
   },
   onPageScroll(e) {
     this.setData({top:e.scrollTop})
+    // 如果没有触发triggered，仅仅是在下拉的时候挪动到外部滚动条。那还是会导致在动画的时候关闭enabled，导致增加空白空间的情况
     if(this.data.triggered)return;
     this.setData({ enabled: e.scrollTop <= 0 });
   },
